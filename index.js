@@ -54,6 +54,7 @@ if(userClickArray[userLength]!=gamePattern[userLength])
   flag = 0;
   count = 0;
 }
+//hello
 else{
   userLength++;
   if(userLength ===count){
