@@ -28,14 +28,8 @@ $(document).keypress(function(){
   if(count===0)
   {
   nextSequence();
-  // $("#"+randomColor).fadeOut(100).fadeIn(100);
-  // var audio = new Audio("sounds/"+randomColor+".mp3");
-  // audio.play();
-  // count++;
-  // $("h1").text("level "+count)
 }
 })
-
 $(".btn").click(function(event){
   if(count === 0 || flag ===0)
   {
@@ -50,19 +44,15 @@ $(".btn").click(function(event){
   var audio = new Audio("sounds/"+userColor+".mp3");
   audio.play();
 }
-console.log(userLength);
-console.log(userClickArray[userLength]);
-
 if(userClickArray[userLength]!=gamePattern[userLength])
 {
   console.log("if2");
   //game over
-  $("h1").text("GAME OVER")
+  $("h1").text("GAME OVER press any key to start over")
   var sound = new Audio("sounds/wrong.mp3");
   sound.play();
   flag = 0;
-
-
+  count = 0;
 }
 else{
   userLength++;
@@ -71,7 +61,6 @@ else{
   userClickArray = [];
   console.log("else");
   setTimeout(function(){nextSequence()},400)
-  //nextSequence()
 }
 }
 })
